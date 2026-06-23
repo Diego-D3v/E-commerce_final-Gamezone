@@ -51,7 +51,7 @@ class PriceDisplay extends StatelessWidget {
     final mutedColor = theme.textTheme.bodySmall?.color ?? Colors.grey;
 
     return SizedBox(
-      height: 40, // Altura fija para que todos ocupen el mismo espacio
+      height: 44, // Altura fija para que todos ocupen el mismo espacio
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -62,7 +62,7 @@ class PriceDisplay extends StatelessWidget {
               color: primaryColor,
               fontSize: fontSize,
               fontWeight: FontWeight.w700,
-              letterSpacing: 0.5,
+              letterSpacing: 1.0,
             ),
           ),
           if (originalPrice != null && originalPrice! > price)
@@ -70,7 +70,7 @@ class PriceDisplay extends StatelessWidget {
               formatPrice(originalPrice!),
               style: TextStyle(
                 color: mutedColor,
-                fontSize: fontSize - 3,
+                fontSize: fontSize - 2,
                 decoration: TextDecoration.lineThrough,
               ),
             ),
