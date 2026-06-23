@@ -45,7 +45,7 @@ class WishlistScreen extends StatelessWidget {
           : GridView.builder(
               padding: const EdgeInsets.all(16),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, childAspectRatio: 0.53,
+                crossAxisCount: 2, childAspectRatio: 0.48,
                 crossAxisSpacing: 12, mainAxisSpacing: 12,
               ),
               itemCount: wishlist.items.length,

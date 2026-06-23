@@ -152,7 +152,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                     padding: const EdgeInsets.fromLTRB(16, 4, 16, 80),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.52,
+                      childAspectRatio: 0.48,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),

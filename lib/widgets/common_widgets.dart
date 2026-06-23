@@ -47,32 +47,35 @@ class PriceDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final primaryColor = theme.colorScheme.primary; // neonPurple
+    final primaryColor = theme.colorScheme.primary;
     final mutedColor = theme.textTheme.bodySmall?.color ?? Colors.grey;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          formatPrice(price),
-          style: TextStyle(
-            color: primaryColor,
-            fontSize: fontSize,
-            fontWeight: FontWeight.w700,
-            letterSpacing: 0.5,
-          ),
-        ),
-        if (originalPrice != null && originalPrice! > price)
+    return SizedBox(
+      height: 40, // Altura fija para que todos ocupen el mismo espacio
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
           Text(
-            formatPrice(originalPrice!),
+            formatPrice(price),
             style: TextStyle(
-              color: mutedColor,
-              fontSize: fontSize - 3,
-              decoration: TextDecoration.lineThrough,
+              color: primaryColor,
+              fontSize: fontSize,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
             ),
           ),
-      ],
+          if (originalPrice != null && originalPrice! > price)
+            Text(
+              formatPrice(originalPrice!),
+              style: TextStyle(
+                color: mutedColor,
+                fontSize: fontSize - 3,
+                decoration: TextDecoration.lineThrough,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
@@ -149,7 +152,7 @@ class ProductCard extends StatelessWidget {
             ),
             // ── Info ──────────────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -163,13 +166,16 @@ class ProductCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   // Nombre
-                  Text(
-                    product.name,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
+                  SizedBox(
+                    height: 40, // Altura fija para 2 líneas (ajusta según la fuente)
+                    child: Text(
+                      product.name,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 4),
                   // Rating

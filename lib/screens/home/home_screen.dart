@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 12),
               SizedBox(
-                height: 340,
+                height: 350, // ← altura aumentada de 340 a 370
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -175,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 12),
                 SizedBox(
-                  height: 340,
+                  height: 350, // ← altura aumentada de 340 a 370
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 }
 
-// ── PageView de banners — FASE 8.3 ────────────────────────────────────
+// ── PageView de banners ──────────────────────────────────────────────
 class _BannerCarousel extends StatefulWidget {
   const _BannerCarousel();
   @override
